@@ -20,6 +20,13 @@ markup:
     guessSyntax: true
     style: emacs
 
+
+social:
+  github: https://github.com/nodejh
+  twitter: https://twitter.com/nodejh
+  stackoverflow: https://stackoverflow.com/users/4518882/nodejh
+
+
 params:
   author: nodejh
   bio: Software Engineer
@@ -27,7 +34,3 @@ params:
   enableRSS: true
   enableComments: true
   enableGoogleAnalytics: true
-  social:
-    github: https://github.com/nodejh
-    twitter: https://twitter.com/nodejh
-    stackoverflow: https://stackoverflow.com/users/4518882/nodejh

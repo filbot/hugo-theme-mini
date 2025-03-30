@@ -2,11 +2,11 @@
 {{ partial "profile.html" . }}
 
 <div id="list-page">
-    {{ $pages := .Site.RegularPages }}
+    {{ $pages := where .Site.RegularPages "Type" "!=" "about" }} <!-- Exclude pages with type "about" -->
     {{ $paginator := .Paginate ($pages) }}
     {{ range $paginator.Pages }}
         {{ $title := .Title }}
-        {{ $summary := .Summary }}
+        {{ $description := .Params.description }} <!-- Use the description field -->
         <section class="item">
           <div>
             <h1 class="title"><a href='{{ .RelPermalink }}'>{{ $title }}</a></h1>
@@ -16,7 +16,7 @@
           </div>
 
           {{ if ne .Site.Params.hiddenPostSummaryInHomePage true }}
-              <div class="summary">{{ $summary | plainify | htmlUnescape }}</div>
+              <div class="summary">{{ $description | plainify | htmlUnescape }}</div> <!-- Display the description -->
           {{ end }}
 
         </section>
